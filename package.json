@@ -1,0 +1,9 @@
+{
+  "name": "spanish-translation-annotator-web",
+  "version": "1.0.0",
+  "description": "Local website version of the Spanish translation annotator.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
