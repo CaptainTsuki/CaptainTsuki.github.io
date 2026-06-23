@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spanish Translation Annotator Web</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace" aria-label="Spanish annotation workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">magic translation highlighter</p>
+            <h1>Live translation annotater</h1>
+          </div>
+          <div class="actions">
+            <button id="sampleButton" type="button">Load sample</button>
+            <button id="clearButton" type="button" class="ghost">Clear</button>
+          </div>
+        </header>
+
+        <div class="editor-wrap">
+          <label for="editor">Spanish text</label>
+          <div
+            id="editor"
+            class="editor"
+            contenteditable="true"
+            spellcheck="false"
+            role="textbox"
+            aria-multiline="true"
+          ></div>
+        </div>
+      </section>
+
+      <aside class="side-panel" aria-label="Annotation controls">
+        <div class="status-card">
+          <p class="label">Selection</p>
+          <strong id="selectionText">No word selected</strong>
+          <p id="selectionHint">Highlight a Spanish word or phrase in the editor.</p>
+          <a
+            id="googleTranslateLink"
+            class="translate-link"
+            href="https://translate.google.com/?sl=es&tl=en&op=translate"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open in Google Translate
+          </a>
+        </div>
+
+        <form id="translationForm" class="translation-form">
+          <label for="translationInput">English translation</label>
+          <textarea
+            id="translationInput"
+            placeholder="translation appears here"
+            autocomplete="off"
+            rows="1"
+          ></textarea>
+          <button id="insertButton" type="submit" disabled>Insert selection (Alt + T)</button>
+          <button id="undoButton" type="button" class="ghost" disabled>
+            Undo translation (Ctrl + Z)
+          </button>
+        </form>
+
+        <div class="quick-list">
+          <p class="label">Recent annotations</p>
+          <ul id="historyList"></ul>
+        </div>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
